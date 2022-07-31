@@ -1,0 +1,62 @@
+[
+  {
+    "questionId": "question1",
+    "label": "question1?",
+    "options": [
+      {
+        "optionsId": "option1-yes",
+        "name": "question1",
+        "label": "yes",
+        "value": "yes"
+      },
+      {
+        "optionsId": "option1-no",
+        "name": "question1",
+        "label": "no",
+        "value": "no"
+      }
+    ],
+    "nextQuestion": "question2",
+    "expectedValue": "yes"
+  },
+  {
+    "questionId": "question2",
+    "label": "question2?",
+    "options": [
+      {
+        "optionsId": "option2-chat",
+        "name": "question2",
+        "label": "chat",
+        "value": "chat"
+      },
+      {
+        "optionsId": "option2-phone",
+        "name": "question2",
+        "label": "phone",
+        "value": "phone"
+      }
+    ],
+    "nextQuestion": "question3",
+    "expectedValue": null
+  },
+  {
+    "questionId": "question3",
+    "label": "question3?",
+    "options": [
+      {
+        "optionsId": "option3-yes",
+        "name": "question3",
+        "label": "yes",
+        "value": "yes"
+      },
+      {
+        "optionsId": "option3-no",
+        "name": "question3",
+        "label": "no",
+        "value": "no"
+      }
+    ],
+    "nextQuestion": null,
+    "expectedValue": null
+  }
+]
