@@ -27,7 +27,7 @@ export default function App() {
     );
 
     const question = questions[index];
-    questions[index].selected = value ;
+    questions[index].selected = value;
 
     if (questions.length > index + 1) {
       questions.splice(index + 1, questions.length);
@@ -48,7 +48,7 @@ export default function App() {
       (option) => option.questionId === question?.nextQuestion
     );
 
-    setQuestions([...questions, newQuestion]);
+    setQuestions([...questions, { ...newQuestion, selected: null }]);
   };
 
   return (
