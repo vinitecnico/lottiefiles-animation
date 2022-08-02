@@ -7,7 +7,7 @@ import defaultQuestions from "./questions.json";
 export default function App() {
   const [questions, setQuestions] = useState([defaultQuestions[0]]);
   const [isFinishedForm, setIsFinishedForm] = useState(false);
-  const [commentTex, setCommentTex] = useState('')
+  const [commentTex, setCommentTex] = useState("");
 
   const defaultOptions = {
     loop: true,
@@ -52,9 +52,9 @@ export default function App() {
     setQuestions([...questions, { ...newQuestion, selected: null }]);
   };
 
-  const handleCommentChange = event => {
-    setCommentTex(event.target.value)
-  }
+  const handleCommentChange = (event) => {
+    setCommentTex(event.target.value);
+  };
 
   return (
     <div className="App">
@@ -85,8 +85,25 @@ export default function App() {
 
         {isFinishedForm && (
           <>
-            <h5>comment</h5>
-            <textarea />
+            <div className="field-body">
+              <label className="pure-material-textfield-filled">
+                <input
+                  placeholder=" "
+                  value={commentTex}
+                  onChange={handleCommentChange}
+                  maxLength="20"
+                />
+                <span>Textfield</span>
+              </label>
+              <div className="mdc-text-field-helper-line">
+                <div className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">
+                  Helper message
+                </div>
+                <div className="mdc-text-field-character-counter">
+                  {commentTex.length} / 20
+                </div>
+              </div>
+            </div>
             <input type="submit" label="send" />
           </>
         )}
@@ -102,19 +119,6 @@ export default function App() {
           <label>First Name</label>
           <span className="focus-border"></span>
         </div> */}
-
-        <div className="field-body">
-          <label className="pure-material-textfield-filled">
-            <input placeholder=" " value={commentTex} onChange={handleCommentChange} maxLength="20" />
-            <span>Textfield</span>
-          </label>
-          <div className="mdc-text-field-helper-line">
-            <div className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">
-              Helper message
-            </div>
-            <div className="mdc-text-field-character-counter">{commentTex.length} / 20</div>
-          </div>
-        </div>
       </form>
     </div>
   );
