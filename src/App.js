@@ -83,6 +83,19 @@ export default function App() {
             <input type="submit" label="send" />
           </>
         )}
+
+        <div className="col-3 input-effect">
+          <input className="effect-16" type="text" placeholder="" />
+          <label>First Name</label>
+          <span className="focus-border"></span>
+        </div>
+
+        <div className="col-3 input-effect">
+          <textarea className="effect-16" type="text" placeholder="" />
+          <label>First Name</label>
+          <span className="focus-border"></span>
+        </div>
+
       </form>
     </div>
   );
