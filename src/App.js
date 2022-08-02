@@ -7,6 +7,7 @@ import defaultQuestions from "./questions.json";
 export default function App() {
   const [questions, setQuestions] = useState([defaultQuestions[0]]);
   const [isFinishedForm, setIsFinishedForm] = useState(false);
+  const [commentTex, setCommentTex] = useState('')
 
   const defaultOptions = {
     loop: true,
@@ -51,6 +52,10 @@ export default function App() {
     setQuestions([...questions, { ...newQuestion, selected: null }]);
   };
 
+  const handleCommentChange = event => {
+    setCommentTex(event.target.value)
+  }
+
   return (
     <div className="App">
       <h1>Hello CodeSandbox</h1>
@@ -70,7 +75,9 @@ export default function App() {
                   checked={selected === option.value}
                   onChange={(event) => handleChange(event, questionId)}
                 />
-                <label htmlFor={option.optionsId}>{option.label}</label>
+                <label htmlFor={option.optionsId} tabindex="0">
+                  {option.label}
+                </label>
               </div>
             ))}
           </div>
@@ -84,7 +91,7 @@ export default function App() {
           </>
         )}
 
-        <div className="col-3 input-effect">
+        {/* <div className="col-3 input-effect">
           <input className="effect-16" type="text" placeholder="" />
           <label>First Name</label>
           <span className="focus-border"></span>
@@ -94,8 +101,20 @@ export default function App() {
           <textarea className="effect-16" type="text" placeholder="" />
           <label>First Name</label>
           <span className="focus-border"></span>
-        </div>
+        </div> */}
 
+        <div className="field-body">
+          <label className="pure-material-textfield-filled">
+            <input placeholder=" " value={commentTex} onChange={handleCommentChange} maxLength="20" />
+            <span>Textfield</span>
+          </label>
+          <div className="mdc-text-field-helper-line">
+            <div className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">
+              Helper message
+            </div>
+            <div className="mdc-text-field-character-counter">{commentTex.length} / 20</div>
+          </div>
+        </div>
       </form>
     </div>
   );
