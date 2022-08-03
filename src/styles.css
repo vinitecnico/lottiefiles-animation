@@ -7,6 +7,9 @@
   position: relative;
 }
 
+.field-body {
+  margin: 40px 0;
+}
 
 .pure-material-textfield-filled > input,
 .pure-material-textfield-filled > textarea {
@@ -148,10 +151,10 @@
   font-family: Roboto, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1.25rem;
   font-weight: 400;
-  letter-spacing: .0333333333em;
+  letter-spacing: 0.0333333333em;
   text-decoration: inherit;
   text-transform: inherit;
   display: block;
